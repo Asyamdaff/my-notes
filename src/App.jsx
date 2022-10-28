@@ -19,9 +19,6 @@ import { getInitialData } from "./utils";
 
 const App = () => {
   const [notes, setNotes] = useState([]);
-  // const [notes, setNotes] = useState(
-  //   () => JSON.parse(localStorage.getItem("NOTES")) || []
-  // );
   const [categories, setCategories] = useState(allCategories);
   const [category, setCategory] = useState(categories[0]);
   const [isFormShown, setIsFormShown] = useState(false);
@@ -125,11 +122,7 @@ const App = () => {
         setShowBackToTop(false);
       }
     });
-  }, [initialData]);
-
-	useEffect(() => {
-    localStorage.setItem("NOTES", JSON.stringify(notes));
-  }, [notes]);
+  }, []);
 
   return (
     <>
