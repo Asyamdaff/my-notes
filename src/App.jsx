@@ -18,7 +18,7 @@ import allCategories from "./categories";
 import { getInitialData } from "./utils";
 
 const App = () => {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(getInitialData);
   const [categories, setCategories] = useState(allCategories);
   const [category, setCategory] = useState(categories[0]);
   const [isFormShown, setIsFormShown] = useState(false);
